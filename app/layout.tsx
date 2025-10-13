@@ -5,13 +5,34 @@ import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'UNCAGE',
-  description: 'UNCAGE builds scalable digital solutions from MVPs to ERP',
+  title: 'Uncage Software',
+  description: 'Uncage Software',
+  applicationName: 'Uncage Software',
   generator: 'v0.app',
   icons: {
     icon: 'https://i.postimg.cc/5y0g3DBn/uk.png',
     shortcut: 'https://i.postimg.cc/5y0g3DBn/uk.png',
     apple: 'https://i.postimg.cc/5y0g3DBn/uk.png',
+  },
+  openGraph: {
+    title: 'Uncage Software',
+    description: 'Uncage Software',
+    url: '/',
+    siteName: 'Uncage Software',
+    images: [
+      {
+        url: 'https://i.postimg.cc/5y0g3DBn/uk.png',
+        width: 512,
+        height: 512,
+      },
+    ],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Uncage Software',
+    description: 'Uncage Software',
+    images: ['https://i.postimg.cc/5y0g3DBn/uk.png'],
   },
 }
 
