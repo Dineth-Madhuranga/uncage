@@ -882,11 +882,11 @@ export default function HomePage() {
                 <div className="flex items-center space-x-3 mb-6">
                   <div className="w-12 h-12 rounded-xl flex items-center justify-center animate-pulse-glow">
                     <Image
-                      src="https://i.postimg.cc/WpyMPWx0/Generated-Image-September-28-2025-4-11-PM-removebg-preview.png"
+                      src="https://i.postimg.cc/5y0g3DBn/uk.png"
                       alt="UNCAGE Logo"
-                      width={48}
-                      height={48}
-                      className="w-12 h-12 object-contain"
+                      width={32}
+                      height={32}
+                      className="w-8 h-8 object-contain"
                     />
                   </div>
                   <div>

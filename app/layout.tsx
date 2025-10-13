@@ -5,9 +5,14 @@ import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
+  title: 'UNCAGE',
+  description: 'UNCAGE builds scalable digital solutions from MVPs to ERP',
   generator: 'v0.app',
+  icons: {
+    icon: 'https://i.postimg.cc/5y0g3DBn/uk.png',
+    shortcut: 'https://i.postimg.cc/5y0g3DBn/uk.png',
+    apple: 'https://i.postimg.cc/5y0g3DBn/uk.png',
+  },
 }
 
 export default function RootLayout({

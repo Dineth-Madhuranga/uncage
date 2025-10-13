@@ -44,7 +44,7 @@ export async function POST(req: Request) {
     const userSubject = `Thanks for contacting UNCAGE`
 
     // HTML templates
-    const logoUrl = "https://i.postimg.cc/WpyMPWx0/Generated-Image-September-28-2025-4-11-PM-removebg-preview.png"
+    const logoUrl = "https://i.postimg.cc/5y0g3DBn/uk.png"
     const gradient = "linear-gradient(90deg,#7c3aed,#22d3ee)"
 
     const ownerHtml = `<!doctype html><html><head><meta charset=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"/><meta name=\"color-scheme\" content=\"light only\"/><title>New Contact</title></head>
