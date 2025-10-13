@@ -23,11 +23,15 @@ import {
   Globe,
   Shield,
 } from "lucide-react"
+import { TbBrandJavascript } from "react-icons/tb"
+import { FaPython, FaJava, FaPhp } from "react-icons/fa"
+import { FaReact, FaAngular, FaNode, FaAws, FaMicrosoft } from "react-icons/fa"
+import { SiKotlin, SiFlutter, SiSap, SiGooglecloud, SiDocker, SiKubernetes, SiGitlab, SiJenkins, SiGoogleads, SiMeta, SiGoogleanalytics, SiHubspot, SiSemrush, SiTensorflow, SiPytorch, SiOpencv, SiGoogle } from "react-icons/si"
+import { FaSwift } from "react-icons/fa6"
 import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useState } from "react"
 import { ScrollAnimate } from "@/components/scroll-animate"
-import { PageTransition } from "@/components/page-transition"
 
 export default function HomePage() {
   const [scrolled, setScrolled] = useState(false)
@@ -45,8 +49,7 @@ export default function HomePage() {
   }
 
   return (
-    <PageTransition>
-      <div className="min-h-screen bg-background fade-in">
+    <div className="min-h-screen bg-background fade-in">
         <header
           className={`fixed top-4 left-4 right-4 z-50 transition-all duration-500 ${
             scrolled ? "glass-nav" : "bg-transparent"
@@ -470,12 +473,12 @@ export default function HomePage() {
               </div>
               <div className="grid grid-cols-2 md:grid-cols-6 gap-6">
                 {[
-                  { name: "JavaScript", icon: Code, gradient: "from-yellow-500 to-yellow-600" },
-                  { name: "Python", icon: Code, gradient: "from-blue-500 to-blue-600" },
-                  { name: "Java", icon: Code, gradient: "from-red-500 to-red-600" },
-                  { name: "PHP", icon: Code, gradient: "from-purple-500 to-purple-600" },
-                  { name: "Swift", icon: Code, gradient: "from-orange-500 to-orange-600" },
-                  { name: "Kotlin", icon: Code, gradient: "from-purple-600 to-purple-700" },
+                  { name: "JavaScript", icon: TbBrandJavascript, gradient: "from-yellow-500 to-yellow-600" },
+                  { name: "Python", icon: FaPython, gradient: "from-blue-500 to-blue-600" },
+                  { name: "Java", icon: FaJava, gradient: "from-red-500 to-red-600" },
+                  { name: "PHP", icon: FaPhp, gradient: "from-purple-500 to-purple-600" },
+                  { name: "Swift", icon: FaSwift, gradient: "from-orange-500 to-orange-600" },
+                  { name: "Kotlin", icon: SiKotlin, gradient: "from-purple-600 to-purple-700" },
                 ].map((lang) => (
                   <Card
                     key={lang.name}
@@ -504,9 +507,9 @@ export default function HomePage() {
               </div>
               <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
                 {[
-                  { name: "React", icon: Database, gradient: "from-blue-400 to-blue-500" },
-                  { name: "Angular", icon: Database, gradient: "from-red-600 to-red-700" },
-                  { name: "Node.js", icon: Database, gradient: "from-green-600 to-green-700" },
+                  { name: "React", icon: FaReact, gradient: "from-blue-400 to-blue-500" },
+                  { name: "Angular", icon: FaAngular, gradient: "from-red-600 to-red-700" },
+                  { name: "Node.js", icon: FaNode, gradient: "from-green-600 to-green-700" },
                   { name: "Laravel", icon: Database, gradient: "from-red-500 to-red-600" },
                   { name: "Spring Boot", icon: Database, gradient: "from-green-500 to-green-600" },
                 ].map((framework) => (
@@ -537,10 +540,10 @@ export default function HomePage() {
               </div>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                 {[
-                  { name: "Flutter", icon: Smartphone, gradient: "from-blue-400 to-blue-500" },
-                  { name: "React Native", icon: Smartphone, gradient: "from-blue-600 to-blue-700" },
-                  { name: "Swift (iOS)", icon: Smartphone, gradient: "from-orange-500 to-orange-600" },
-                  { name: "Kotlin (Android)", icon: Smartphone, gradient: "from-purple-600 to-purple-700" },
+                  { name: "Flutter", icon: SiFlutter, gradient: "from-blue-400 to-blue-500" },
+                  { name: "React Native", icon: FaReact, gradient: "from-blue-600 to-blue-700" },
+                  { name: "Swift (iOS)", icon: FaSwift, gradient: "from-orange-500 to-orange-600" },
+                  { name: "Kotlin (Android)", icon: SiKotlin, gradient: "from-purple-600 to-purple-700" },
                 ].map((mobile) => (
                   <Card
                     key={mobile.name}
@@ -569,12 +572,11 @@ export default function HomePage() {
               </div>
               <div className="grid grid-cols-2 md:grid-cols-6 gap-6">
                 {[
-                  { name: "SAP S/4HANA", icon: Cloud, gradient: "from-blue-600 to-blue-700" },
-                  { name: "SAP ECC", icon: Cloud, gradient: "from-blue-500 to-blue-600" },
+                  { name: "SAP S/4HANA", icon: SiSap, gradient: "from-blue-600 to-blue-700" },
+                  { name: "SAP ECC", icon: SiSap, gradient: "from-blue-500 to-blue-600" },
                   { name: "IFS Cloud", icon: Cloud, gradient: "from-purple-600 to-purple-700" },
-                  { name: "AWS", icon: Cloud, gradient: "from-orange-500 to-orange-600" },
-                  { name: "Microsoft Azure", icon: Cloud, gradient: "from-blue-500 to-blue-600" },
-                  { name: "Google Cloud", icon: Cloud, gradient: "from-green-500 to-green-600" },
+                  { name: "AWS", icon: FaAws, gradient: "from-orange-500 to-orange-600" },
+                  { name: "Google Cloud", icon: SiGooglecloud, gradient: "from-green-500 to-green-600" },
                 ].map((platform) => (
                   <Card
                     key={platform.name}
@@ -603,10 +605,10 @@ export default function HomePage() {
               </div>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                 {[
-                  { name: "Docker", icon: Wrench, gradient: "from-blue-500 to-blue-600" },
-                  { name: "Kubernetes", icon: Wrench, gradient: "from-blue-600 to-blue-700" },
-                  { name: "GitLab CI/CD", icon: Wrench, gradient: "from-orange-600 to-orange-700" },
-                  { name: "Jenkins", icon: Wrench, gradient: "from-gray-600 to-gray-700" },
+                  { name: "Docker", icon: SiDocker, gradient: "from-blue-500 to-blue-600" },
+                  { name: "Kubernetes", icon: SiKubernetes, gradient: "from-blue-600 to-blue-700" },
+                  { name: "GitLab CI/CD", icon: SiGitlab, gradient: "from-orange-600 to-orange-700" },
+                  { name: "Jenkins", icon: SiJenkins, gradient: "from-gray-600 to-gray-700" },
                 ].map((tool) => (
                   <Card
                     key={tool.name}
@@ -635,11 +637,11 @@ export default function HomePage() {
               </div>
               <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
                 {[
-                  { name: "Google Ads", icon: BarChart3, gradient: "from-blue-500 to-blue-600" },
-                  { name: "Meta Ads", icon: BarChart3, gradient: "from-blue-600 to-blue-700" },
-                  { name: "Google Analytics", icon: BarChart3, gradient: "from-orange-500 to-orange-600" },
-                  { name: "HubSpot", icon: BarChart3, gradient: "from-orange-600 to-orange-700" },
-                  { name: "SEMrush", icon: BarChart3, gradient: "from-orange-500 to-orange-600" },
+                  { name: "Google Ads", icon: SiGoogleads, gradient: "from-blue-500 to-blue-600" },
+                  { name: "Meta Ads", icon: SiMeta, gradient: "from-blue-600 to-blue-700" },
+                  { name: "Google Analytics", icon: SiGoogleanalytics, gradient: "from-orange-500 to-orange-600" },
+                  { name: "HubSpot", icon: SiHubspot, gradient: "from-orange-600 to-orange-700" },
+                  { name: "SEMrush", icon: SiSemrush, gradient: "from-orange-500 to-orange-600" },
                 ].map((tool) => (
                   <Card
                     key={tool.name}
@@ -658,25 +660,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Partnered With */}
-            <div>
-              <div className="flex items-center mb-8">
-                <div className="w-8 h-8 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center mr-3">
-                  <Users className="w-5 h-5 text-primary-foreground" />
-                </div>
-                <h3 className="text-2xl font-bold text-foreground">Partnered With</h3>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-1 gap-6 max-w-xs">
-                <Card className="glass-card hover:border-primary/60 transition-all duration-300 hover:transform hover:scale-105">
-                  <CardContent className="p-4 text-center">
-                    <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl mx-auto mb-3 flex items-center justify-center">
-                      <Building className="w-6 h-6 text-white" />
-                    </div>
-                    <p className="font-medium text-foreground">Microsoft</p>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
+            
           </div>
         </section>
 
@@ -787,17 +771,18 @@ export default function HomePage() {
                 </Card>
               </div>
 
-              {/* Industry Leaders Section */}
+              {/* Industry Leaders Section */
+              }
               <div className="text-center">
                 <p className="text-muted-foreground font-bold mb-8 tracking-wider">POWERED BY INDUSTRY LEADERS</p>
                 <div className="grid grid-cols-2 md:grid-cols-6 gap-8">
                   {[
-                    { name: "TensorFlow", icon: Brain, gradient: "from-orange-500 to-orange-600" },
-                    { name: "PyTorch", icon: Brain, gradient: "from-red-500 to-red-600" },
-                    { name: "OpenCV", icon: Eye, gradient: "from-green-500 to-green-600" },
-                    { name: "AWS AI", icon: Cloud, gradient: "from-orange-600 to-orange-700" },
-                    { name: "Azure AI", icon: Cloud, gradient: "from-blue-500 to-blue-600" },
-                    { name: "Google AI", icon: Brain, gradient: "from-blue-600 to-blue-700" },
+                    { name: "TensorFlow", icon: SiTensorflow, gradient: "from-orange-500 to-orange-600" },
+                    { name: "PyTorch", icon: SiPytorch, gradient: "from-red-500 to-red-600" },
+                    { name: "OpenCV", icon: SiOpencv, gradient: "from-green-500 to-green-600" },
+                    { name: "AWS AI", icon: FaAws, gradient: "from-orange-600 to-orange-700" },
+                    { name: "Google AI", icon: SiGoogle, gradient: "from-blue-600 to-blue-700" },
+                    { name: "Microsoft AI", icon: FaMicrosoft, gradient: "from-blue-500 to-blue-600" },
                   ].map((platform) => (
                     <Card
                       key={platform.name}
@@ -914,7 +899,6 @@ export default function HomePage() {
                   UNCAGE builds scalable digital solutions from MVPs to ERP empowering startups and enterprises to grow
                   faster with confidence.
                 </p>
-                <Button className="btn-outline" onClick={() => window.open('mailto:info@uncage.lk?subject=Newsletter%20Subscription', '_blank')}>NEWSLETTER</Button>
               </div>
 
               {/* Useful Links */}
@@ -922,103 +906,46 @@ export default function HomePage() {
                 <h4 className="text-lg font-bold text-foreground mb-6">USEFUL LINKS</h4>
                 <ul className="space-y-3">
                   <li>
-                    <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                      Home
-                    </a>
+                    <div className="text-muted-foreground hover:text-primary transition-colors">
+                      <Link
+                        href="https://www.linkedin.com/company/uncage2/"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="h-10 w-10 flex items-center justify-center rounded-xl border border-border/40 hover:border-primary/60 transition-colors"
+                      >
+                        <span className="text-primary text-sm font-medium">LinkedIn</span>
+                      </Link>
+                    </div>
                   </li>
                   <li>
-                    <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                    <Link href="/about" className="text-muted-foreground hover:text-primary transition-colors">
                       About Us
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                      Services
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                      Career
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                      Contact Us
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
-
-              {/* Solutions */}
-              <div>
-                <h4 className="text-lg font-bold text-foreground mb-6">SOLUTION</h4>
-                <ul className="space-y-3">
-                  <li>
-                    <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                      ERP and Enterprise Solutions
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                      Application Development
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                      Artificial Intelligence Solutions
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                      Digital Marketing and Brand Strategy
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                      Website Design and Development
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                      Social Media Management
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                      On-Demand Freelance Services
-                    </a>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Contact & Social */}
               <div>
                 <h4 className="text-lg font-bold text-foreground mb-6">CONTACT US</h4>
                 <div className="space-y-3 mb-6">
-                  <p className="text-muted-foreground">info@uncage.lk</p>
+                  <a href="mailto:info@uncage.lk" className="text-muted-foreground hover:text-primary">info@uncage.lk</a>
                   <p className="text-muted-foreground">Sri Lanka</p>
-                  <p className="text-muted-foreground">+94 77 2585 824</p>
+                  <a href="tel:+94772386251" className="text-muted-foreground hover:text-primary">077 238 6251</a>
                 </div>
 
                 <h4 className="text-lg font-bold text-foreground mb-4">FOLLOW US</h4>
-                <div className="flex space-x-4">
+                <div className="flex space-x-3">
                   <a
-                    href="#"
+                    href="/careers"
                     className="w-10 h-10 bg-gradient-to-br from-muted to-card rounded-xl flex items-center justify-center hover:from-primary hover:to-accent hover:text-primary-foreground transition-all duration-300 hover:transform hover:scale-110"
                   >
                     <Users className="w-5 h-5" />
                   </a>
                   <a
-                    href="#"
+                    href="https://www.instagram.com/uncage2/"
+                    target="_blank"
+                    rel="noreferrer"
                     className="w-10 h-10 bg-gradient-to-br from-muted to-card rounded-xl flex items-center justify-center hover:from-primary hover:to-accent hover:text-primary-foreground transition-all duration-300 hover:transform hover:scale-110"
                   >
-                    <Building className="w-5 h-5" />
-                  </a>
-                  <a
-                    href="#"
-                    className="w-10 h-10 bg-gradient-to-br from-muted to-card rounded-xl flex items-center justify-center hover:from-primary hover:to-accent hover:text-primary-foreground transition-all duration-300 hover:transform hover:scale-110"
-                  >
-                    <MessageSquare className="w-5 h-5" />
                   </a>
                 </div>
               </div>
@@ -1031,6 +958,5 @@ export default function HomePage() {
         </footer>
       </div>
     </div>
-    </PageTransition>
   )
 }

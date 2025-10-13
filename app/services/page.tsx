@@ -12,7 +12,6 @@ export default function ServicesPage() {
   const services = [
     {
       category: "Enterprise Solutions",
-      icon: <Database className="w-8 h-8" />,
       services: [
         {
           title: "ERP Implementation",
@@ -32,7 +31,6 @@ export default function ServicesPage() {
     },
     {
       category: "Application Development",
-      icon: <Code className="w-8 h-8" />,
       services: [
         {
           title: "Web Applications",
@@ -52,7 +50,6 @@ export default function ServicesPage() {
     },
     {
       category: "AI Solutions",
-      icon: <Brain className="w-8 h-8" />,
       services: [
         {
           title: "Machine Learning",
@@ -72,7 +69,6 @@ export default function ServicesPage() {
     },
     {
       category: "Digital Marketing",
-      icon: <TrendingUp className="w-8 h-8" />,
       services: [
         {
           title: "Brand Strategy",
@@ -151,8 +147,8 @@ export default function ServicesPage() {
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4">
         <div className="max-w-6xl mx-auto text-center">
-          <Badge className="mb-6 bg-primary/10 text-primary border-primary/20 animate-pulse-glow">OUR SERVICES</Badge>
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-float">
+          <Badge className="mb-6 bg-primary/10 text-primary border-primary/20">OUR SERVICES</Badge>
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
             Solutions That
             <br />
             Transform Business
@@ -170,25 +166,21 @@ export default function ServicesPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
             {[
               {
-                icon: <Database className="w-8 h-8" />,
                 title: "Enterprise Solutions",
                 count: "15+ Projects",
                 description: "ERP, Cloud Infrastructure, and Enterprise Applications",
               },
               {
-                icon: <Code className="w-8 h-8" />,
                 title: "Application Development",
                 count: "25+ Apps",
                 description: "Web and Mobile Applications with Modern Technologies",
               },
               {
-                icon: <Brain className="w-8 h-8" />,
                 title: "AI & Automation",
                 count: "10+ AI Models",
                 description: "Machine Learning, Computer Vision, and Process Automation",
               },
               {
-                icon: <TrendingUp className="w-8 h-8" />,
                 title: "Digital Marketing",
                 count: "20+ Campaigns",
                 description: "Brand Strategy, Performance Marketing, and Analytics",
@@ -200,7 +192,12 @@ export default function ServicesPage() {
               >
                 <CardContent className="p-6 text-center">
                   <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                    <div className="text-primary">{service.icon}</div>
+                    <div className="text-primary">
+                      {service.title === "Enterprise Solutions" && <Database className="w-8 h-8" />}
+                      {service.title === "Application Development" && <Code className="w-8 h-8" />}
+                      {service.title === "AI & Automation" && <Brain className="w-8 h-8" />}
+                      {service.title === "Digital Marketing" && <TrendingUp className="w-8 h-8" />}
+                    </div>
                   </div>
                   <h3 className="text-lg font-semibold mb-2">{service.title}</h3>
                   <Badge className="mb-3 bg-accent/10 text-accent border-accent/20 text-xs">{service.count}</Badge>
@@ -476,7 +473,7 @@ export default function ServicesPage() {
               <div className="space-y-2 text-sm text-muted-foreground">
                 <div>info@uncage.lk</div>
                 <div>Sri Lanka</div>
-                <div>+94 77 2585 824</div>
+                <div>077 238 6251</div>
               </div>
               <div className="mt-4">
                 <h4 className="font-semibold mb-2 text-primary">FOLLOW US</h4>
@@ -484,9 +481,14 @@ export default function ServicesPage() {
                   <div className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center">
                     <span className="text-primary text-xs">f</span>
                   </div>
-                  <div className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center">
+                  <Link
+                    href="https://www.linkedin.com/company/uncage2/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center"
+                  >
                     <span className="text-primary text-xs">in</span>
-                  </div>
+                  </Link>
                   <div className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center">
                     <span className="text-primary text-xs">ig</span>
                   </div>

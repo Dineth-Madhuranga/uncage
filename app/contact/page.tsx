@@ -23,11 +23,30 @@ export default function ContactPage() {
     budget: "",
     message: "",
   })
+  const [sending, setSending] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission here
-    console.log("Form submitted:", formData)
+    setSending(true)
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      })
+      const data = await res.json()
+      if (!res.ok || !data.ok) {
+        throw new Error(data?.error || "Failed to send")
+      }
+      // Reset form on success
+      setFormData({ name: "", email: "", company: "", service: "", budget: "", message: "" })
+      alert("Thanks! Your message has been sent. We emailed you a confirmation.")
+    } catch (err) {
+      console.error(err)
+      alert("Sorry, we couldn't send your message. Please try again later.")
+    } finally {
+      setSending(false)
+    }
   }
 
   const handleInputChange = (field: string, value: string) => {
@@ -45,23 +64,23 @@ export default function ContactPage() {
     {
       icon: <Phone className="w-6 h-6" />,
       title: "Call Us",
-      description: "Speak directly with our team during business hours",
-      contact: "+94 77 2585 824",
-      action: "tel:+94772585824",
+      description: "Call or WhatsApp our team during business hours",
+      contact: "077 238 6251",
+      action: "tel:+94772386251",
     },
     {
       icon: <MessageSquare className="w-6 h-6" />,
       title: "Live Chat",
       description: "Get instant support through our live chat system",
       contact: "Available 9 AM - 6 PM",
-      action: "#",
+      action: "https://wa.me/94772386251",
     },
     {
       icon: <Calendar className="w-6 h-6" />,
       title: "Schedule Meeting",
       description: "Book a consultation call with our experts",
       contact: "Free 30-min consultation",
-      action: "#",
+      action: "mailto:info@uncage.lk?subject=Schedule%20Meeting&body=Hi%20UNCAGE%2C%20I'd%20like%20to%20schedule%20a%20meeting.",
     },
   ]
 
@@ -70,7 +89,7 @@ export default function ContactPage() {
       city: "Colombo",
       country: "Sri Lanka",
       address: "123 Business District, Colombo 03, Sri Lanka",
-      phone: "+94 77 2585 824",
+      phone: "077 238 6251",
       email: "colombo@uncage.lk",
       hours: "Mon - Fri: 9:00 AM - 6:00 PM",
     },
@@ -78,7 +97,7 @@ export default function ContactPage() {
       city: "Remote",
       country: "Global",
       address: "Available worldwide for remote collaboration",
-      phone: "+94 77 2585 824",
+      phone: "077 238 6251",
       email: "remote@uncage.lk",
       hours: "24/7 Support Available",
     },
@@ -143,9 +162,11 @@ export default function ContactPage() {
               </Link>
             </div>
 
-            <Button className="bg-primary/20 hover:bg-primary/30 text-primary border border-primary/30 rounded-full px-6">
-              CONTACT US
-            </Button>
+            <Link href="/contact">
+              <Button className="bg-primary/20 hover:bg-primary/30 text-primary border border-primary/30 rounded-full px-6">
+                CONTACT US
+              </Button>
+            </Link>
           </div>
         </div>
       </nav>
@@ -153,8 +174,8 @@ export default function ContactPage() {
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4">
         <div className="max-w-6xl mx-auto text-center">
-          <Badge className="mb-6 bg-primary/10 text-primary border-primary/20 animate-pulse-glow">GET IN TOUCH</Badge>
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-float">
+          <Badge className="mb-6 bg-primary/10 text-primary border-primary/20">GET IN TOUCH</Badge>
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
             Let's Build Something
             <br />
             Amazing Together
@@ -186,6 +207,8 @@ export default function ContactPage() {
                 onClick={() => {
                   if (method.action.startsWith("mailto:") || method.action.startsWith("tel:")) {
                     window.location.href = method.action
+                  } else if (method.action.startsWith("http")) {
+                    window.open(method.action, "_blank")
                   }
                 }}
               >
@@ -514,7 +537,7 @@ export default function ContactPage() {
               <div className="space-y-2 text-sm text-muted-foreground">
                 <div>info@uncage.lk</div>
                 <div>Sri Lanka</div>
-                <div>+94 77 2585 824</div>
+                <div>077 238 6251</div>
               </div>
               <div className="mt-4">
                 <h4 className="font-semibold mb-2 text-primary">FOLLOW US</h4>
@@ -522,9 +545,14 @@ export default function ContactPage() {
                   <div className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center">
                     <span className="text-primary text-xs">f</span>
                   </div>
-                  <div className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center">
+                  <Link
+                    href="https://www.linkedin.com/company/uncage2/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center"
+                  >
                     <span className="text-primary text-xs">in</span>
-                  </div>
+                  </Link>
                   <div className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center">
                     <span className="text-primary text-xs">ig</span>
                   </div>

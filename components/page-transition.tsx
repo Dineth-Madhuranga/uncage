@@ -1,10 +1,11 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import type { ReactNode } from "react"
 import { usePathname } from "next/navigation"
 
 interface PageTransitionProps {
-  children: React.ReactNode
+  children: ReactNode
 }
 
 export function PageTransition({ children }: PageTransitionProps) {

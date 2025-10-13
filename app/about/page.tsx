@@ -56,8 +56,8 @@ export default function AboutPage() {
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4">
         <div className="max-w-6xl mx-auto text-center">
-          <Badge className="mb-6 bg-primary/10 text-primary border-primary/20 animate-pulse-glow">ABOUT UNCAGE</Badge>
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-float">
+          <Badge className="mb-6 bg-primary/10 text-primary border-primary/20">ABOUT UNCAGE</Badge>
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
             Unleashing Innovation.
             <br />
             Uncaging Potential.
@@ -379,7 +379,7 @@ export default function AboutPage() {
               <div className="space-y-2 text-sm text-muted-foreground">
                 <div>info@uncage.lk</div>
                 <div>Sri Lanka</div>
-                <div>+94 77 2585 824</div>
+                <div>077 238 6251</div>
               </div>
               <div className="mt-4">
                 <h4 className="font-semibold mb-2 text-primary">FOLLOW US</h4>
@@ -387,9 +387,14 @@ export default function AboutPage() {
                   <div className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center">
                     <span className="text-primary text-xs">f</span>
                   </div>
-                  <div className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center">
+                  <Link
+                    href="https://www.linkedin.com/company/uncage2/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center"
+                  >
                     <span className="text-primary text-xs">in</span>
-                  </div>
+                  </Link>
                   <div className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center">
                     <span className="text-primary text-xs">ig</span>
                   </div>
